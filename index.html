@@ -19,6 +19,14 @@
 
     <link href="https://fonts.googleapis.com/css?family=Poppins:100,200,400,300,500,600,700" rel="stylesheet"> 
 
+
+
+
+
+
+
+
+
   </head>
 
   <body>
@@ -48,21 +56,21 @@
                 </a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="#">
-                  <span data-feather="file"></span>
-                  Reports
+                <a class="nav-link" href="#Gifts">
+                  <span data-feather="users"></span>
+                  Gifts
                 </a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="#">
-                  <span data-feather="shopping-cart"></span>
+                <a class="nav-link" href="#RSVP">
+                  <span data-feather="file"></span>
                   RSVP
                 </a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="#">
-                  <span data-feather="users"></span>
-                  Gifts
+                <a class="nav-link" href="#Wishes">
+                  <span data-feather="shopping-cart"></span>
+                  Well Wishes
                 </a>
               </li>
             </ul>
@@ -72,7 +80,7 @@
 
         <main role="main" class="col-md-9 ml-sm-auto col-lg-10 pt-3 px-4 dashy">
 
-           <br><h5 style="color:#f9508c;">Hello Beautiful Couple; Welcome To Your Dashboard.</h5><br>
+           <br><h5 style="color:#777;">Hello Beautiful Couple; Welcome To Your Dashboard.</h5><br>
           
           <div class="row">
 
@@ -143,7 +151,7 @@
                 </a>
               </div>
             </div>
-            
+
           </div><!-- End of Row -->
 
 
@@ -153,7 +161,7 @@
             <div class="col-md-12">
               <div class="card"><br>
 
-                <h5 style="color: #f9508c; margin-left: 10px;">Here Are The Names of People Who Purchased A Gift For You:</h5>
+                <h5 style="color: #f9508c; margin-left: 10px;">Gift Purchaser's List:</h5>
 
                 <br><br>
 
@@ -213,7 +221,7 @@
             <div class="col-md-12">
               <div class="card"><br>
 
-                <h5 style="color:#f9508c;  margin-left: 10px;">Here Are The Names of People Who RSVP for your wedding:</h5>
+                <h5 style="color:#f9508c;  margin-left: 10px;">RSVP List:</h5>
 
                 <br><br>
 
@@ -253,9 +261,63 @@
             </div>
           </div>
 
+
+    <!-- for WELL WISHERS MESSAGES -->
+
+
+         <br><br>
+
+          <div class="row" id="Wishes">
+            <div class="col-md-12">
+              <div class="card"><br>
+
+                <h5 style="color:#f9508c;  margin-left: 10px;">Well Wisher's Message List:</h5>
+
+                <br><br>
+
+                  <div class="table-responsive">
+                    <table class="table table-striped table-sm">
+                      <thead>
+                        <tr>
+                          <th  width="10">
+                          <th>Sender's Name</th>
+                          <th>Message Snipet</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <td><input type="button" value="view"/></td>
+                          <td>Abdulquadri Sotomiwa</td>
+                          <td>Hey, I am so happy for you guys, I wish you all the best in this journey</td>
+                        </tr>
+                        <tr>
+                          <td><input type="button" value="view"/></td>
+                          <td>Abdulquadri Sotomiwa</td>
+                          <td>Hey, I am so happy for you guys, I wish you all the best in this journey</td>
+                        </tr>
+                      </tbody>
+                    </table>
+
+
+                    <!-- Contents on the div -->
+                        <div id="content">
+                            <h1>Message From Abdulquadri</h1>
+                            <p>Hey, I am so happy for you guys, I wish you all the best in this journey, super super proud of you guys</p>
+                        </div>
+
+
+                  </div>
+              </div>
+            </div>
+          </div>
+
+
         </main>
       </div>
     </div>
+
+
+   
 
 
     <!-- Placed at the end of the document so the pages load faster -->
@@ -273,8 +335,17 @@
       feather.replace()
     </script>
 
+      <!-- script for message dropdown display -->
+    <script>
+        $(document).delegate('input[type="button"]','click',function(){
+        $('[colspan="5"]').parent('tr').remove();
+        $(this).parents('tr').after('<tr/>').next().append('<td colspan="5"/>').children('td').append('<div/>').children().css('background','#f0f0f0').html($('#content').html());
+        });
+    </script>
+
     <!-- Graphs -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.1/Chart.min.js"></script>
+
     <script>
       var ctx = document.getElementById("myChart");
       var myChart = new Chart(ctx, {

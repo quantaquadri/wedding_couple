@@ -184,3 +184,8 @@ a:active {
 #myBtn:hover {
   background-color: #f9508c;
 }
+
+
+#content {
+  display: none;
+}
